@@ -1,0 +1,374 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  src: url('./assets/fonts/big-shoulders-display.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url('./assets/fonts/outfit-light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply font-body text-lg font-light leading-7 text-charcoal;
+  }
+
+  h1, h2 {
+    @apply font-display font-black uppercase;
+  }
+}
+
+@layer components {
+  .page-width {
+    width: min(1110px, 100% - 32px);
+    @apply mx-auto;
+  }
+
+  .hero-image {
+    @apply h-60 w-full;
+  }
+
+  .hero-content {
+    @apply px-4 pt-8;
+  }
+
+  .hero-title {
+    @apply text-[clamp(3rem,16vw,3.75rem)] leading-[0.9167] text-ink;
+  }
+
+  .hero-intro {
+    @apply mt-8;
+  }
+
+  .action {
+    @apply inline-flex max-w-full align-top font-display text-xl font-extrabold uppercase leading-6 tracking-[3.64px] text-white;
+  }
+
+  .action-label, .action-arrow {
+    @apply grid min-h-[72px] place-items-center;
+  }
+
+  .action-label {
+    @apply bg-ink px-3 text-center;
+  }
+
+  .action-arrow {
+    @apply w-14 shrink-0 bg-copper;
+  }
+
+  .action:hover .action-label, .action:focus-visible .action-label {
+    @apply bg-copper;
+  }
+
+  .action:hover .action-arrow, .action:focus-visible .action-arrow {
+    @apply bg-ink;
+  }
+
+  .action:focus-visible, .social-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .action:focus-visible {
+    /* The two rings stay visible on light, dark and photographic backgrounds. */
+    outline-color: #151515;
+    box-shadow: 0 0 0 4px white;
+  }
+
+  .gallery-day {
+    @apply grid gap-[25px];
+  }
+
+  .gallery-photo {
+    @apply w-full object-cover;
+  }
+
+  .gallery-heading {
+    @apply text-[50px] leading-[45px];
+  }
+
+  .gallery-day .gallery-heading {
+    @apply text-ink;
+  }
+
+  .gallery-inspiration {
+    @apply grid gap-4;
+  }
+
+  .inspiration-copy {
+    @apply flex flex-col justify-center px-6 pb-[47px] pt-12;
+  }
+
+  .site-footer {
+    @apply px-8 py-12 text-base leading-[26px];
+  }
+
+  .footer-content {
+    @apply mx-auto grid max-w-[1110px] items-start gap-[38px];
+  }
+
+  .footer-logo {
+    @apply h-10 w-auto;
+  }
+
+  .social-links {
+    @apply flex gap-5;
+  }
+
+  .social-link {
+    @apply relative block;
+  }
+
+  .social-link::before {
+    @apply absolute -inset-1 content-[''];
+  }
+
+  .social-icon {
+    @apply block size-5 bg-current;
+    mask: var(--icon) center / contain no-repeat;
+  }
+
+  .facebook { --icon: url('./assets/facebook.svg'); }
+  .instagram { --icon: url('./assets/instagram.svg'); }
+  .twitter { --icon: url('./assets/twitter.svg'); }
+
+  .bg-ink .social-link:hover, .bg-ink .social-link:focus-visible {
+    @apply text-copper;
+  }
+
+  .bg-copper .social-link:hover, .bg-copper .social-link:focus-visible {
+    @apply text-white;
+  }
+
+  .location-map {
+    @apply relative h-[550px] overflow-hidden bg-[#e9e9e9];
+  }
+
+  .map-image {
+    @apply absolute left-1/2 top-1/2 h-auto w-[1207.31px] max-w-none -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .map-marker {
+    @apply absolute left-1/2 top-[231px] -translate-x-1/2;
+  }
+
+  .map-nav {
+    @apply relative mx-auto;
+  }
+
+  .map-nav .action:focus-visible {
+    outline-offset: -4px;
+    box-shadow: inset 0 0 0 6px white;
+    z-index: 1;
+    position: relative;
+  }
+
+  .location-details {
+    @apply grid gap-12 pb-14 pt-12;
+  }
+
+  .location-title {
+    @apply text-[clamp(2.75rem,13.333vw,3.125rem)] leading-[0.9];
+  }
+
+  .location-street {
+    @apply text-[32px] leading-none text-copper;
+  }
+
+  @screen md {
+    .page-width {
+      width: min(1110px, 100% - 79px);
+    }
+
+    .hero {
+      @apply relative flex min-h-[700px] items-center py-16;
+    }
+
+    .hero-image {
+      @apply absolute inset-y-0 left-0 h-full w-[56.9%];
+    }
+
+    .hero-content {
+      width: min(480px, 43.1% + 8px);
+      margin-left: calc(56.9% - 48px);
+      @apply relative p-0;
+    }
+
+    .hero-title {
+      @apply text-[70px] leading-[65px];
+    }
+
+    .hero-intro {
+      @apply mt-12;
+    }
+
+    .gallery-day {
+      @apply items-start gap-[11px];
+      grid-template-columns: 280fr 398fr;
+    }
+
+    .gallery-day-copy {
+      @apply col-start-1 row-start-1 max-w-[223px] pt-9;
+    }
+
+    .gallery-day > img {
+      @apply col-start-2 row-start-1;
+    }
+
+    .gallery-inspiration {
+      @apply gap-[11px];
+      grid-template-columns: 398fr 280fr;
+      grid-template-rows: 313px minmax(396px, auto);
+    }
+
+    .gallery-bench {
+      @apply relative row-span-2;
+    }
+
+    .gallery-bench img {
+      @apply absolute inset-0 h-full;
+    }
+
+    .inspiration-copy {
+      @apply px-[29px] py-12;
+    }
+
+    .site-footer {
+      @apply px-0 py-14;
+    }
+
+    .footer-content {
+      width: min(1110px, 100% - 79px);
+      grid-template-columns: 110px minmax(0, 281px) 1fr;
+      column-gap: min(8.46vw, 100px);
+    }
+
+    .footer-content nav {
+      @apply justify-self-end;
+    }
+
+    .location-map {
+      @apply h-[600px];
+    }
+
+    .map-image {
+      @apply w-[1262.19px];
+    }
+
+    .map-marker {
+      @apply top-64;
+    }
+
+    .map-nav {
+      width: calc(100% - 79px);
+    }
+
+    .location-details {
+      @apply gap-[11px] pb-20 pt-[88px];
+      grid-template-columns: 280fr 398fr;
+    }
+
+    .location-title {
+      @apply text-[55px] leading-[50px];
+    }
+  }
+
+  @screen desktop {
+    .hero {
+      @apply min-h-[800px] items-start pb-16 pt-[190px];
+    }
+
+    .hero::before {
+      width: calc(50% - 270px);
+      @apply absolute inset-y-0 left-0 bg-ink content-[''];
+    }
+
+    .hero-image {
+      @apply left-1/2 w-[540px] -translate-x-1/2;
+    }
+
+    .hero-content {
+      width: min(1110px, 100% - 79px);
+      @apply mx-auto flex justify-between;
+    }
+
+    .hero-title {
+      @apply text-[96px] leading-[88px] text-white;
+    }
+
+    .hero-intro {
+      @apply mt-0 w-[350px] text-[22px] leading-8;
+    }
+
+    .gallery-day {
+      @apply items-center gap-[30px];
+      grid-template-columns: 445fr 635fr;
+    }
+
+    .gallery-day-copy {
+      @apply max-w-[350px] pt-0;
+    }
+
+    .gallery-heading {
+      @apply text-[60px] leading-[60px];
+    }
+
+    .gallery-inspiration {
+      @apply gap-[30px];
+      grid-template-columns: 635fr 445fr;
+      grid-template-rows: 313px minmax(377px, auto);
+    }
+
+    .inspiration-copy {
+      @apply px-12 py-12;
+    }
+
+    .gallery-day-copy p, .inspiration-copy p, .location-details {
+      @apply text-[22px] leading-8;
+    }
+
+    .site-footer {
+      @apply py-20 text-lg leading-7;
+    }
+
+    .footer-content {
+      grid-template-columns: 160px 430px 1fr;
+      column-gap: 140px;
+    }
+
+    .footer-logo {
+      @apply h-[58px];
+    }
+
+    .map-image {
+      width: max(1441px, 100%);
+    }
+
+    .map-nav {
+      width: min(1128px, 100% - 79px);
+    }
+
+    .location-details {
+      @apply gap-[30px] pb-32 pt-[104px];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .location-title {
+      @apply text-[70px] leading-[70px];
+    }
+
+    .location-street {
+      @apply text-4xl leading-none;
+    }
+  }
+}

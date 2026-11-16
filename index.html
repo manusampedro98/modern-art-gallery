@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the Modern Art Gallery in Newport, Rhode Island. Admission is free seven days a week.">
+    <title>Modern Art Gallery</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="bg-paper md:bg-white">
+    <main>
+      <header class="hero">
+        <img class="hero-image object-cover" src="./assets/hero.webp" width="1080" height="1618"
+          alt="Two visitors walking past a large portrait in the gallery" fetchpriority="high">
+        <div class="hero-content">
+          <h1 class="hero-title">Modern<br>Art Gallery</h1>
+          <div class="hero-intro">
+            <p>The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
+            <a class="action mt-8 md:mt-12 desktop:mt-16" href="./location.html">
+              <span class="action-label w-[204px]">Our location</span>
+              <span class="action-arrow">
+                <img src="./assets/arrow-right.svg" width="10" height="24" alt="">
+              </span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-width my-[120px] space-y-8 md:space-y-[11px] desktop:my-[180px] desktop:space-y-[30px]">
+        <section class="gallery-day" aria-labelledby="gallery-day">
+          <img class="gallery-photo h-[320px] md:h-[400px]" src="./assets/collection.webp"
+            width="1270" height="847" alt="Exhibition room with geometric works and a sculpture">
+          <div class="gallery-day-copy">
+            <h2 id="gallery-day" class="gallery-heading">Your day <br class="md:hidden">at the gallery</h2>
+            <p class="mt-[21px] md:mt-6 desktop:mt-8">Wander through our distinct collections and find new insights about our artists. Dive into the details of their creative process.</p>
+          </div>
+        </section>
+
+        <section class="gallery-inspiration" aria-labelledby="gallery-inspiration">
+          <div class="gallery-bench">
+            <img class="gallery-photo h-[480px]" src="./assets/bench.webp" width="1271" height="1779"
+              alt="Wooden bench in front of a black-and-white photograph" loading="lazy">
+          </div>
+          <img class="gallery-photo h-[200px] md:h-[313px]" src="./assets/corridor.webp"
+            width="890" height="1259" alt="Visitors in a gallery corridor lined with framed paintings" loading="lazy">
+          <div class="inspiration-copy bg-ink text-white">
+            <h2 id="gallery-inspiration" class="gallery-heading">Come &amp; be inspired</h2>
+            <p class="mt-6 desktop:mt-8">We’re excited to welcome you to our gallery and see how our collections influence you.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer bg-ink text-white">
+      <div class="footer-content">
+        <img class="footer-logo invert" src="./assets/logo.svg" width="110" height="40" alt="Modern Art Gallery">
+        <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+        <nav aria-label="Social media">
+          <ul class="social-links">
+            <li><a class="social-link" href="https://www.facebook.com/" aria-label="Facebook"><span class="social-icon facebook" aria-hidden="true"></span></a></li>
+            <li><a class="social-link" href="https://www.instagram.com/" aria-label="Instagram"><span class="social-icon instagram" aria-hidden="true"></span></a></li>
+            <li><a class="social-link" href="https://x.com/" aria-label="X (Twitter)"><span class="social-icon twitter" aria-hidden="true"></span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
